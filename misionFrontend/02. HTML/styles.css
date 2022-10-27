@@ -31,6 +31,10 @@ section {
   width: 96%;
 }
 
+header {
+  height: 100vh;
+}
+
 h1 {
   font-size: 2em;
   margin-top: 1em;
@@ -110,10 +114,9 @@ ul {
 
 #home img {
   margin-top: 2rem;
-  height: 60vh;
-  max-height: 25rem;
-  min-height: 12.5rem;
-  /* width: 25rem; */
+  width: 40vh;
+  min-width: 15rem;
+  max-width: 35rem;
 }
 
 /*! Menú */
