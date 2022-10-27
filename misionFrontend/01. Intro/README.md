@@ -2,7 +2,7 @@
 
 ## 1. Toma de requerimientos
 
-***Usuario solicitante***
+**_Usuario solicitante_**
 
 Se solicita una página que automatice las demandas de los clientes a través del llenado de un formulario y posterior pago para finalizar la transacción. El cliente crea una cuenta en la página para dar seguimiento a su proceso legal y le llegan notificaciones vía correo electrónico avisándole cada vez que se actualice su demanda.
 
@@ -12,7 +12,7 @@ Al recibir el pago, el administrador debe ser capaz de visualizarlo en un dashbo
 
 La página debe ser visualizada correctamente desde el celular y la preferencia de colores es azul marino y blanco, se aceptan propuestas.
 
-***Líder funcional***
+**_Líder funcional_**
 
 El cliente requiere de una aplicación web que le permita automatizar las demandas de sus usuarios. Esto se realizará de la siguiente manera:
 
@@ -21,7 +21,7 @@ El cliente requiere de una aplicación web que le permita automatizar las demand
 
 Se requiere que la página web sea responsive y se seleccionaron los colores azul marino y blanco pero el cliente acepta recomendaciones.
 
-***Requerimientos funcionales***
+**_Requerimientos funcionales_**
 
 - Los usuarios deben ingresar al sistema con un correo y contraseña.
 - Solo se permitirá el pago al llenar por completo el formulario.
@@ -32,7 +32,7 @@ Se requiere que la página web sea responsive y se seleccionaron los colores azu
 - El sistema notificará al usuario vía correo electrónico cada vez que se actualice su proceso.
 - La aplicación debe poder utilizarse sin necesidad de instalar ningún software adicional además de un navegador web.
 
-***Requerimientos no funcionales***
+**_Requerimientos no funcionales_**
 
 - La aplicación web debe poseer un diseño responsive a fin de su correcta visualización en dispositivos móviles.
 - La paleta de colores contiene azul marino y blanco.
