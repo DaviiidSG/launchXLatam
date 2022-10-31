@@ -1,5 +1,5 @@
 /*! Generales */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --yellow: #E0B500;
@@ -17,37 +17,59 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background-color: #e2d486;
   min-width: 300px;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  background: url(../img/fondo.jpg) no-repeat fixed center;
+  background-size: cover;
+  filter: blur(3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-filter: blur(3px);
 }
 
 section {
   padding-top: 4.8125rem;
   margin: auto;
   width: 96%;
+  text-align: center;
 }
 
 header {
   height: 100vh;
 }
 
+main {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 60%);
+  padding-bottom: 4.375rem;
+}
+
 h1 {
   font-size: 2em;
   margin-top: 1em;
+  color: var(--red);
+  font-weight: 900;
+  text-shadow: -1px 0 2px #000, 0 1px 2px #000, 1px 0 2px #000, 0 -1px 2px #000;
 }
 
 h2 {
+  display: inline-block;
   font-size: 1.6em;
+  margin-top: 0.6em;
   margin-bottom: 1em;
-  margin-top: .6em;
-}
-
-h1, h2 {
-  color: #ff9900;
+  color: #000;
+  border-bottom: 2px solid black;
 }
 
 ul {
@@ -61,9 +83,9 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--red);
+  background-color: #fff;
   width: 100%;
-  border-bottom: .1875rem var(--yellow) solid;
+  border-bottom: .1875rem #000 solid;
   z-index: 2;
 }
 
@@ -76,7 +98,7 @@ ul {
 .navbar a {
   display: block;
   text-decoration: none;
-  color: var(--yellow);
+  color: #000;
   padding: .5em .75em;
   transition: transform .3s ease-out, color .3s ease-out;
   -webkit-transition: transform .3s ease-out, color .3s ease-out;
@@ -120,58 +142,123 @@ ul {
 }
 
 /*! Menú */
-.categoriesOfPizza {
-  background-color: var(--red);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .375rem .5rem;
-  margin-top: .5rem;
+.menuContainer {
+  padding: 2rem;
+  background-color: #a30909;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: .25rem .25rem .375rem rgba(0, 0, 0, 0.7);
 }
 
-.categorieTitle {
+.menuContainer h3 {
+  font-size: 1.2em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: #fff;
 }
 
-.pricesContainer {
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(12.5rem, 40.625rem) );
+  grid-auto-rows: fit-content(26.875rem);
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.pizzaContainer {
+ position: relative;
+ display: inline-block;
+ overflow: hidden;
+ border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
+}
+
+.pizzaContainer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(224, 179, 0, 0.8);
+  backdrop-filter: blur(3px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  transition: height 0.3s ease-out;
+  -webkit-transition: height 0.3s ease-out;
+  -moz-transition: height 0.3s ease-out;
+  -ms-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.pizzaContainer:hover .overlay {
+  height: 100%;
+}
+
+.text {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 12.5rem;
-  font-weight: 600;
-}
-
-.pricesCategories {
-  color: var(--yellow);
-}
-
-.pizzasWrapper {
-  border-bottom: .125rem var(--red) solid;
-  margin: .375rem 0;
-  padding: 0 .5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pizzasWrapper:nth-of-type(6), .pizzasWrapper:last-of-type {
-  border: none;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  min-width: 20.3125rem;
 }
 
 .pizzaTitle {
   text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+  line-height: 1.6;
+}
+
+.ingredients {
+  line-height: 1.5;
+}
+
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 0.25rem;
+}
+
+.sizes {
   color: var(--red);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.pizzaPrices {
+  font-weight: 500;
+  color: #000;
 }
 
 /*! Toppings */
 .toppingList {
+  margin: auto;
   padding: 0 .5rem;
+  width: 50%;
 }
 
 .toppingList li {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: .5rem;
+  border-bottom: 0.125rem solid #000;
 }
 
 .toppingTitle {
@@ -182,12 +269,10 @@ ul {
 
 .prices {
   font-weight: 600;
-  margin-left: .625rem;
 }
 
 /*! Pedidos */
 .buyForm {
-  background-color: var(--red);
   margin: auto;
   max-width: 50rem;
   padding: 1rem;
@@ -196,12 +281,13 @@ ul {
   -moz-border-radius: 1.25rem;
   -ms-border-radius: 1.25rem;
   -o-border-radius: 1.25rem;
-  box-shadow: .25rem .25rem .375rem rgba(0, 0, 0, 0.7);
+  border: 0.125rem solid #000;
+  text-align: initial;
 }
 
 fieldset {
-  border: var(--yellow) .125rem solid;
-  background-color: var(--red2);
+  border: var(--red) 0.125rem solid;
+  background-color: #eeeeee;
   padding: 1rem;
   margin-bottom: .625rem;
 }
@@ -224,13 +310,12 @@ fieldset:last-of-type {
 
 legend {
   margin: auto;
-  color: var(--darkenYellow);
   font-weight: 600;
   text-transform: uppercase;
   padding: 0 .5rem;
 }
 
-input:not(input[type=checkbox], input[type=radio]), select {
+input:not(input[type=radio]), select {
   font-size: inherit;
   font-family: inherit;
   margin-bottom: .6rem;
@@ -240,28 +325,18 @@ input:not(input[type=checkbox], input[type=radio]), select {
   -moz-border-radius: .25rem;
   -ms-border-radius: .25rem;
   -o-border-radius: .25rem;
-  border: .0625rem var(--darkenYellow) solid;
+  border: .0625rem var(--red2) solid;
 }
 
-label {
-  color: #ffffff;
-}
-
-label[for*=pizza] {
-  color: var(--yellow);
-  font-weight: 600;
-  margin-right: .375rem;
-}
-
-input:not(input[type=checkbox], input[type=radio]):focus, select:focus {
+input:not(input[type=radio]):focus, select:focus {
   outline: none;
-  box-shadow: 0 0 .125rem var(--yellow);
+  box-shadow: 0 0 .125rem var(--red);
 }
 
 .inputSpan {
   font-size: .875rem;
-  font-weight: 300 !important;
-  color: #fff !important;
+  font-weight: 400 !important;
+  color: var(--red) !important;
 }
 
 .textInput {
@@ -270,28 +345,16 @@ input:not(input[type=checkbox], input[type=radio]):focus, select:focus {
 }
 
 form span:not(.inputDivider) {
-  color: #e2d486;
+  color: var(--red);
   margin-right: .375rem;
 }
 
 .inputDivider {
-  color: #e2d486;
   margin: 0 .375rem;
 }
 
 input[type=number] {
-  width: 8rem;
-}
-
-.inputTitle {
-  text-transform: uppercase;
-  margin-bottom: .8rem;
-  color: #ff9900;
-  text-decoration: underline;
-}
-
-.inputTitle:nth-of-type(2) {
-  margin: 1rem 0 .8rem;
+  width: 3rem;
 }
 
 select {
@@ -304,9 +367,7 @@ select {
 }
 
 .buttonWrapper input {
-  background-color: #ff9900;
   margin: .6rem;
-  color: #a30909;
   font-weight: 500;
   transition: transform .3s ease-out;
   -webkit-transition: transform .3s ease-out;
@@ -323,16 +384,17 @@ select {
   -o-transform: scale(1.1, 1.1);
 }
 
+/*! Pie de página */
+
 footer {
-  background-color: var(--red);
-  margin-top: 4.375rem;
+  background-color: var(--red2);
   padding: 1.25rem;
   color: #fff;
-  border-top: .1875rem var(--yellow) solid;
+  border-top: .1875rem #000 solid;
 }
 
 address h3 {
-  color: #e2d486;
+  color: #000;
 }
 
 address img {
