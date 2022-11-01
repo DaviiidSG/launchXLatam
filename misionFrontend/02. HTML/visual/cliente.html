@@ -293,7 +293,7 @@
           </select>
 
           <label for="quantity">Cantidad</label>
-          <input type="number" name="quantity" min="1"><br>
+          <input type="number" name="quantity" id="quantity" min="1"><br>
 
           <span>Tamaño: </span>
           <input type="radio" name="size" id="slice" value="slice">
@@ -312,7 +312,6 @@
 
           <label for="topping">Selecciona el topping de tu preferencia</label>
           <select name="topping" id="topping">
-            <option value="n/d" disabled selected>Selecciona una opción</option>
             <option value="maiz">Maíz</option>
             <option value="cebollaCaramelizada">Cebolla caramelizada</option>
             <option value="champiñones">Champiñones</option>
@@ -321,6 +320,7 @@
             <option value="chickenFingers">Chicken fingers</option>
             <option value="pepperoni">Pepperoni</option>
             <option value="quesoAzul">Queso azul</option>
+            <option value="n/d" selected>Sin topping</option>
           </select>
         </fieldset>
 
