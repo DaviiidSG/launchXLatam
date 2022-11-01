@@ -36,8 +36,14 @@ Bonus: En caso de que te quede corto el ejercicio siguele con esto!
 
 ---
 
+## Branding
+
+Para la creación del branding me basé en la temática espacial del curso y lo adapté a una pizzería, dando como resultado el nombre "Galaxy Pizza" y el siguiente logo:
+
+<img src="./img/logoGalaxyPizza.svg" alt="Logo Galaxy Pizza" width="360px"/>
+
 ## Despliegue
 
-[Página cliente](https://daviiidsg.github.io/launchXLatam/misionFrontend/02.%20HTML/cliente.html)
+[Página cliente](./visual/cliente.html)
 
 [Página chef]() **_Aún por implementar_**
