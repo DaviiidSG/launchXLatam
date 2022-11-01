@@ -23,19 +23,24 @@ html {
 body {
   min-width: 300px;
   position: relative;
+  background-color: #000;
 }
 
-body::before {
+body::after {
   content: '';
-  background: url(../img/fondo.jpg) no-repeat fixed center;
-  background-size: cover;
-  filter: blur(3px);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: -1;
+  height: 100vh;
+  position: fixed;
+  background: url(../img/fondo.jpg) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  filter: blur(3px);
   -webkit-filter: blur(3px);
 }
 
@@ -188,7 +193,6 @@ ul {
 .overlay {
   position: absolute;
   background-color: rgba(224, 179, 0, 0.8);
-  backdrop-filter: blur(3px);
   bottom: 0;
   left: 0;
   right: 0;
@@ -199,6 +203,11 @@ ul {
   -ms-transition: height 0.3s ease-out;
   -o-transition: height 0.3s ease-out;
   overflow: hidden;
+}
+
+.pizzaContainer:hover img {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 }
 
 .pizzaContainer:hover .overlay {
