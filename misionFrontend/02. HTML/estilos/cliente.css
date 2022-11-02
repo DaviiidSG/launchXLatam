@@ -105,11 +105,11 @@ ul {
   text-decoration: none;
   color: #000;
   padding: .5em .75em;
-  transition: transform .3s ease-out, color .3s ease-out;
-  -webkit-transition: transform .3s ease-out, color .3s ease-out;
-  -moz-transition: transform .3s ease-out, color .3s ease-out;
-  -ms-transition: transform .3s ease-out, color .3s ease-out;
-  -o-transition: transform .3s ease-out, color .3s ease-out;
+  transition: transform .2s ease-out, color .2s ease-out;
+  -webkit-transition: transform .2s ease-out, color .2s ease-out;
+  -moz-transition: transform .2s ease-out, color .2s ease-out;
+  -ms-transition: transform .2s ease-out, color .2s ease-out;
+  -o-transition: transform .2s ease-out, color .2s ease-out;
 }
 
 .navbar a:hover {
@@ -188,6 +188,16 @@ ul {
   display: block;
   width: 100%;
   height: auto;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
 }
 
 .overlay {
@@ -197,17 +207,22 @@ ul {
   left: 0;
   right: 0;
   height: 0;
-  transition: height 0.3s ease-out;
-  -webkit-transition: height 0.3s ease-out;
-  -moz-transition: height 0.3s ease-out;
-  -ms-transition: height 0.3s ease-out;
-  -o-transition: height 0.3s ease-out;
+  transition: height 0.2s ease-out;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  -o-transition: height 0.2s ease-out;
   overflow: hidden;
+  border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
 }
 
 .pizzaContainer:hover img {
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 }
 
 .pizzaContainer:hover .overlay {
