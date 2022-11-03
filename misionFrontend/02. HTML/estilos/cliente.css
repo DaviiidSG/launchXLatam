@@ -6,6 +6,7 @@
   --red: #b62121;
   --darkenYellow: #DD9226;
   --red2: #b43434;
+  --red3: #dd5d5d;
 }
 
 html {
@@ -74,7 +75,7 @@ h2 {
   margin-top: 0.6em;
   margin-bottom: 1em;
   color: #000;
-  border-bottom: 2px solid black;
+  border-bottom: 0.125rem solid black;
 }
 
 ul {
@@ -149,7 +150,7 @@ ul {
 /*! Menú */
 .menuContainer {
   padding: 2rem;
-  background-color: #a30909;
+  background: linear-gradient(var(--red), var(--red3));
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -411,7 +412,7 @@ select {
 /*! Pie de página */
 
 footer {
-  background-color: var(--red2);
+  background: linear-gradient(var(--red3), var(--red));
   padding: 1.25rem;
   color: #fff;
   border-top: .1875rem #000 solid;
@@ -435,6 +436,8 @@ address img {
 address a {
   color: inherit;
 }
+
+/*! Responsive */
 
 @media (max-width: 74.9375em) {
   html {
