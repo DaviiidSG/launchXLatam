@@ -1,0 +1,156 @@
+/*! Generales */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --background: #f0f0f0;
+  --yellow: #E0B500;
+  --red: #b62121;
+  --darkenYellow: #DD9226;
+  --red2: #b43434;
+  --red3: #dd5d5d;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-width: 300px;
+  background-color: var(--background);
+}
+
+header {
+  width: 100%;
+  padding: 1.25rem;
+  background: linear-gradient(var(--red), var(--red3));
+  text-align: center;
+  border-bottom: 0.125rem solid #000;
+  position: fixed;
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--background);
+  text-shadow: -1px 0 2px #000, 0 1px 2px #000, 1px 0 2px #000, 0 -1px 2px #000;
+}
+
+main {
+  margin: auto;
+  padding-top: 5rem;
+  width: 90%;
+  text-align: center;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  color: #000;
+  border-bottom: 0.125rem solid black;
+}
+
+section {
+  padding: 1.25rem;
+}
+
+hr {
+  border: none;
+  border-bottom: 0.125rem solid var(--darkenYellow);
+}
+
+/*! Contenedores */
+.itemContainer {
+  margin: auto;
+  padding: 0 .5rem;
+  width: 50%;
+}
+
+.itemList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  border-bottom: 0.125rem solid #000;
+}
+
+.item {
+  text-transform: capitalize;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.indicator {
+  text-transform: uppercase;
+  color: #000;
+}
+
+.stock {
+  font-weight: 600;
+}
+
+/*! Pedidos */
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th {
+  text-transform: uppercase;
+  background-color: var(--red3);
+}
+
+td {
+  background-color: rgba(221, 93, 93, 0.5);
+  text-transform: capitalize;
+}
+
+tr td:nth-of-type(3) {
+  text-transform: none;
+}
+
+th,
+td {
+  border: 1px solid var(--red);
+  padding: 0.5rem 1rem;
+}
+
+/*! Footer */
+
+footer {
+  background: linear-gradient(var(--red3), var(--red));
+  padding: 1.25rem;
+  color: #fff;
+  border-top: 0.125rem solid #000;
+  text-align: center;
+}
+
+/*! Responsive */
+@media (max-width: 74.9375em) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (max-width: 61.9375em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 47.9375em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media (max-width: 35.9375em) {
+  html {
+    font-size: 50%;
+  }
+}
