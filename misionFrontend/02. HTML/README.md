@@ -46,4 +46,4 @@ Para la creación del branding me basé en la temática espacial del curso y lo 
 
 [Página cliente](./visual/cliente.html)
 
-[Página chef]() **_Aún por implementar_**
+[Página chef](./visual/chef.html)
