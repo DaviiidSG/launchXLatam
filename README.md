@@ -9,3 +9,7 @@
 ### Práctica de HTML
 
 [Ver proyecto](./misionFrontend/02.%20HTML/)
+
+### Práctica de CSS
+
+[Ver proyecto](./misionFrontend/03.%20CSS/)
