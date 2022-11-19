@@ -1,0 +1,1313 @@
+/** General */
+
+:root {
+  --pokedex-color: #ee2b34;
+  --controls-color: #ff2f52;
+  --volume-track-color: #b1606e;
+  --gray-border: #effbea;
+  --black-border: #000;
+  --big-circle-color: #0bcdff;
+  --big-circle-inside-shadow: rgba(11, 205, 255, 0.7);
+  --brightness: rgba(255, 255, 255, 0.8);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --screen-background: #28323c;
+  --screen-on: #707070;
+  --screen-reflection: rgba(255, 255, 255, 0.25);
+  --small-circle-red: #ef0707;
+  --small-circle-yellow: #e1e519;
+  --small-circle-green: #51b05f;
+  --hinge-color: #d40000;
+  --power-on-button: #3cc850;
+  --power-off-button: #7e7e7e;
+  --circle-outside-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
+  --circle-outside-brightness: 0rem 0rem 0.8rem 0.8rem rgba(11, 205, 255, 0.6);
+  --blue-buttons: #31ddff;
+  --font-color: #e7d108;
+  --white-text: #fff;
+  --steel-color: #CCCCCC;
+  --water-color: #B0E2FF;
+  --bug-color: #99CC33;
+  --dragon-color: #AB82FF;
+  --electric-color: #FFD700;
+  --ghost-color: #778899;
+  --fire-color: #FF7F00;
+  --fairy-color: #FFB0FF;
+  --ice-color: #ADD8E6;
+  --fighting-color: #FF6A6A;
+  --normal-color: #DDCCAA;
+  --grass-color: #99FF66;
+  --psychic-color: #FFB5C5;
+  --rock-color: #CD853F;
+  --dark-color: #A9A9A9;
+  --ground-color: #DEB887;
+  --poison-color: #CC88BB;
+  --flying-color: #BAAAFF;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+body {
+  background-image: url(./assets/img/fondo.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--font-color);
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 4rem;
+}
+
+/** Música */
+
+.music-controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/** Botón de play */
+
+.music-icon {
+  color: var(--controls-color);
+  cursor: pointer;
+}
+
+/** Controles de volumen */
+
+.music-vol {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6rem;
+  height: 0.4rem;
+  border-radius: 0.3125rem;
+  -webkit-border-radius: 0.3125rem;
+  -moz-border-radius: 0.3125rem;
+  -ms-border-radius: 0.3125rem;
+  -o-border-radius: 0.3125rem;
+  background: var(--volume-track-color);
+  outline: none;
+}
+
+.music-vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--controls-color);
+  cursor: pointer;
+}
+
+/** Pokedex */
+
+.pokedex {
+  position: relative;
+  width: 27.5rem;
+  height: 37.5rem;
+  perspective: 625rem;
+  transition: width 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -ms-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+}
+
+.pokedex:hover {
+  width: 52.25rem;
+}
+
+/** Pokedex lado izquierdo */
+
+.pokedex-left-side-container {
+  position: absolute;
+  left: 0;
+  width: 27.5rem;
+  height: 100%;
+  background-color: var(--pokedex-color);
+  border: 0.25rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+  overflow: hidden;
+  transition: border-bottom-right-radius 0.5s ease-in-out;
+  -webkit-transition: border-bottom-right-radius 0.5s ease-in-out;
+  -moz-transition: border-bottom-right-radius 0.5s ease-in-out;
+  -ms-transition: border-bottom-right-radius 0.5s ease-in-out;
+  -o-transition: border-bottom-right-radius 0.5s ease-in-out;
+}
+
+.pokedex:hover .pokedex-left-side-container {
+  border-bottom-right-radius: 0rem;
+}
+
+/** Pokedex top */
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6.25rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--pokedex-color);
+}
+
+.top-brightness {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 0.125rem solid var(--brightness);
+  border-right: 25rem solid transparent;
+  width: 100%;
+}
+
+.top-left-brightness {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 100%;
+  background-color: var(--brightness);
+}
+
+/** Círculo azul */
+
+.big-circle-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.375rem;
+  height: 4.375rem;
+  background-color: var(--gray-border);
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.big-circle-border-inside {
+  background-color: var(--black-border);
+  width: 3.375rem;
+  height: 3.375rem;
+  border: 0.125rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--circle-outside-shadow);
+  transition: box-shadow 0.2s ease-out;
+  -webkit-transition: box-shadow 0.2s ease-out;
+  -moz-transition: box-shadow 0.2s ease-out;
+  -ms-transition: box-shadow 0.2s ease-out;
+  -o-transition: box-shadow 0.2s ease-out;
+}
+
+.big-circle-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--big-circle-inside-shadow);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+}
+
+.big-circle-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 86%;
+  background-color: var(--big-circle-color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.big-circle-fill::before {
+  content: '';
+  position: absolute;
+  top: 0.375rem;
+  left: 0.625rem;
+  width: 38%;
+  height: 46%;
+  background-color: var(--brightness);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 1;
+}
+
+/** Círculos de colores */
+
+.small-circles-container {
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.small-circle-border {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--black-border);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0.125rem 0.125rem 0.375rem rgba(0, 0, 0, 0.6);
+}
+
+.small-circle-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+
+.red-circle {
+  background-color: rgba(239, 7, 7, 0.7);
+}
+
+.yellow-circle {
+  background-color: rgba(226, 229, 25, 0.7);
+}
+
+.green-circle {
+  background-color: rgba(81, 176, 95, 0.7);
+}
+
+.small-circle-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86%;
+  height: 84%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.red-circle::after {
+  background-color: var(--small-circle-red);
+}
+
+.yellow-circle::after {
+  background-color: var(--small-circle-yellow);
+}
+
+.green-circle::after {
+  background-color: var(--small-circle-green);
+}
+
+.small-circle-fill::before {
+  content: '';
+  position: absolute;
+  top: 0.125rem;
+  left: 0.25rem;
+  width: 28%;
+  height: 36%;
+  background-color: var(--brightness);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 1;
+}
+
+/** Bisagra */
+
+.hinge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 30.75rem;
+  border-left: 0.25rem solid var(--black-border);
+  border-top: 0.25rem solid var(--black-border);
+  background-color: var(--pokedex-color);
+}
+
+.top-hinge {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 1rem;
+  border-top: 0.1875rem solid var(--black-border);
+  border-bottom: 0.1875rem solid var(--black-border);
+  background-color: var(--hinge-color);
+}
+
+.bottom-hinge {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  height: 1rem;
+  border-top: 0.1875rem solid var(--black-border);
+  border-bottom: 0.1875rem solid var(--black-border);
+  background-color: var(--hinge-color);
+}
+
+.hinge-brightness {
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 0.25rem;
+  border-top: 9rem solid transparent;
+  border-left: 0.25rem solid var(--brightness);
+  border-bottom: 9rem solid transparent;
+}
+
+/** Pokedex contenedor de pantalla */
+
+.pokedex-left-side-limits {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24.5rem;
+  height: 30.75rem;
+  padding: 0.5rem;
+  border-top: 0.25rem solid var(--black-border);
+}
+
+.pokedex-top-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 0.25rem solid var(--shadow);
+  border-left: 6rem solid transparent;
+  width: 100%;
+}
+
+.pokedex-left-brightness {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 0.25rem solid var(--brightness);
+  border-bottom: 32rem solid transparent;
+}
+
+.pokedex-left-side {
+  width: 100%;
+  height: 100%;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+}
+
+/** Borde de pantalla */
+
+.screen-container {
+  position: relative;
+  width: 20rem;
+  height: 16rem;
+  margin: 2.5rem auto 1.75rem;
+  background-color: var(--gray-border);
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.375rem 0.375rem 0.375rem 3rem;
+  -webkit-border-radius: 0.375rem 0.375rem 0.375rem 3rem;
+  -moz-border-radius: 0.375rem 0.375rem 0.375rem 3rem;
+  -ms-border-radius: 0.375rem 0.375rem 0.375rem 3rem;
+  -o-border-radius: 0.375rem 0.375rem 0.375rem 3rem;
+  box-shadow: 0.25rem 0.25rem var(--shadow);
+}
+
+/** Pantalla */
+
+.screen {
+  position: absolute;
+  top: 2.125rem;
+  right: 2.125rem;
+  left: 2.125rem;
+  bottom: 2.75rem;
+  background-color: var(--screen-background);
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+  overflow: hidden;
+  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+}
+
+.pokemon-img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-img {
+  width: 10rem;
+  display: none;
+  max-width: 100px;
+  margin-top: auto;
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0.125rem;
+}
+
+.first-screen-reflection {
+  position: absolute;
+  top: 34%;
+  left: -2.25rem;
+  width: 116%;
+  height: 2.75rem;
+  background-color: var(--screen-reflection);
+  transform:rotate(135deg);
+  -webkit-transform:rotate(135deg);
+  -moz-transform:rotate(135deg);
+  -ms-transform:rotate(135deg);
+  -o-transform:rotate(135deg);
+}
+
+.second-screen-reflection {
+  position: absolute;
+  top: 54%;
+  left: 3.75rem;
+  width: 96%;
+  height: 1.75rem;
+  background-color: var(--screen-reflection);
+  transform:rotate(135deg);
+  -webkit-transform:rotate(135deg);
+  -moz-transform:rotate(135deg);
+  -ms-transform:rotate(135deg);
+  -o-transform:rotate(135deg);
+}
+
+.reflection {
+  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+}
+
+/** Decoraciones de pantalla */
+
+.circles-deco-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 2.125rem;
+}
+
+.small-circles-deco {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--small-circle-red);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.screen-bottom-deco-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 2.125rem;
+  right: 2.125rem;
+  bottom: 0;
+  height: 2.75rem;
+}
+
+.big-circle-deco {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--small-circle-red);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.lines-deco-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 3rem;
+  height: 60%;
+}
+
+.line {
+  width: 80%;
+  height: 0.1875rem;
+  background-color: rgb(58, 58, 58);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+}
+
+/** Botones de pantalla */
+
+.left-side-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 22rem;
+  height: calc(100% - 20.25rem);
+  margin: auto;
+  padding-bottom: 1.5rem;
+}
+
+/** Botón de encendido */
+
+.left-circle-button {
+  display: grid;
+  place-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--screen-background);
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0.1875rem 0.1875rem var(--shadow);
+  cursor: pointer;
+}
+
+.power-icon {
+  transition: color 0.2s ease-out;
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -ms-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+}
+
+/** Pantalla verde */
+
+.middle-deco-container {
+  width: 9rem;
+  height: 100%;
+}
+
+.lights-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 40%;
+}
+
+.light {
+  width: 40%;
+  height: 0.625rem;
+  border: 0.125rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+}
+
+.red-light {
+  background-color: var(--small-circle-red);
+}
+
+.blue-light {
+  background-color: var(--blue-buttons);
+}
+
+.green-screen {
+  width: 100%;
+  height: 60%;
+  background-color: var(--small-circle-green);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+}
+
+/** Controles */
+
+.controllers {
+  display: grid;
+  grid-template-areas: 
+    ". top ."
+    "left center right"
+    ". bottom .";
+  width: 7rem;
+  height: 100%;
+  place-content: center;
+}
+
+.controller-item {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--screen-background);
+  border: 0.1875rem solid var(--black-border);
+}
+
+.up-controller {
+  grid-area: top;
+  border-radius: 0.375rem 0.375rem 0rem 0rem;
+  -webkit-border-radius: 0.375rem 0.375rem 0rem 0rem;
+  -moz-border-radius: 0.375rem 0.375rem 0rem 0rem;
+  -ms-border-radius: 0.375rem 0.375rem 0rem 0rem;
+  -o-border-radius: 0.375rem 0.375rem 0rem 0rem;
+  border-bottom: none;
+  height: 1.875rem;
+  transform: scale(1, 1.2);
+  -webkit-transform: scale(1, 1.2);
+  -moz-transform: scale(1, 1.2);
+  -ms-transform: scale(1, 1.2);
+  -o-transform: scale(1, 1.2);
+  box-shadow: 0.25rem 0rem 0rem -0.125rem var(--shadow);
+}
+
+.left-controller {
+  grid-area: left;
+  border-radius: 0.375rem 0rem 0rem 0.375rem;
+  -webkit-border-radius: 0.375rem 0rem 0rem 0.375rem;
+  -moz-border-radius: 0.375rem 0rem 0rem 0.375rem;
+  -ms-border-radius: 0.375rem 0rem 0rem 0.375rem;
+  -o-border-radius: 0.375rem 0rem 0rem 0.375rem;
+  border-right: none;
+  transition: background-color 0.2s ease-in;
+  -webkit-transition: background-color 0.2s ease-in;
+  -moz-transition: background-color 0.2s ease-in;
+  -ms-transition: background-color 0.2s ease-in;
+  -o-transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.center-controller {
+  grid-area: center;
+  border: none;
+  display: grid;
+  place-content: center;
+}
+
+.right-controller {
+  grid-area: right;
+  border-radius: 0rem 0.375rem 0.375rem 0rem;
+  -webkit-border-radius: 0rem 0.375rem 0.375rem 0rem;
+  -moz-border-radius: 0rem 0.375rem 0.375rem 0rem;
+  -ms-border-radius: 0rem 0.375rem 0.375rem 0rem;
+  -o-border-radius: 0rem 0.375rem 0.375rem 0rem;
+  border-left: none;
+  box-shadow: 0.125rem 0.125rem var(--shadow);
+  transition: background-color 0.2s ease-in;
+  -webkit-transition: background-color 0.2s ease-in;
+  -moz-transition: background-color 0.2s ease-in;
+  -ms-transition: background-color 0.2s ease-in;
+  -o-transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.down-controller {
+  grid-area: bottom;
+  border-radius: 0rem 0rem 0.375rem 0.375rem;
+  -webkit-border-radius: 0rem 0rem 0.375rem 0.375rem;
+  -moz-border-radius: 0rem 0rem 0.375rem 0.375rem;
+  -ms-border-radius: 0rem 0rem 0.375rem 0.375rem;
+  -o-border-radius: 0rem 0rem 0.375rem 0.375rem;
+  border-top: none;
+  height: 1.875rem;
+  transform: scale(1, 1.2);
+  -webkit-transform: scale(1, 1.2);
+  -moz-transform: scale(1, 1.2);
+  -ms-transform: scale(1, 1.2);
+  -o-transform: scale(1, 1.2);
+  box-shadow: 0.25rem 0rem 0rem -0.125rem var(--shadow);
+}
+
+.center-controller-deco {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 0.125rem solid var(--black-border);
+}
+
+.right-controller:hover,
+.left-controller:hover {
+  background-color: var(--power-off-button);
+}
+
+/** Pokedex lado derecho */
+
+.pokedex-right-side {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 27.5rem;
+  height: 31rem;
+  padding-right: 2.75rem;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -ms-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.right-side-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.pokedex:hover .pokedex-right-side {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+/** Parte trasera */
+
+.pokedex-right-container-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pokedex-color);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-bottom-left-radius: 0.625rem;
+  border: 0.25rem solid var(--black-border);
+  border-right: none;
+}
+
+.yellow-triangle {
+  position: relative;
+  margin: auto 1.25rem;
+  border-left: 3rem solid var(--black-border);
+  border-bottom: 3rem solid transparent;
+  border-top: 3rem solid transparent;
+}
+
+.yellow-triangle::after {
+  content: '';
+  position: absolute;
+  top: -2.5rem;
+  left: -2.8125rem;
+  border-left: 2.5rem solid var(--small-circle-yellow);
+  border-bottom: 2.5rem solid transparent;
+  border-top: 2.5rem solid transparent;
+}
+
+.bottom-line {
+  width: 12rem;
+  height: 1rem;
+  margin: 0 auto 1rem;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+}
+
+/** Parte frontal */
+
+.pokedex-right-container-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: var(--pokedex-color);
+  border: 0.25rem solid var(--black-border);
+  border-left: none;
+  border-radius: 0rem 0.375rem 0.625rem 0rem;
+  -webkit-border-radius: 0rem 0.375rem 0.625rem 0rem;
+  -moz-border-radius: 0rem 0.375rem 0.625rem 0rem;
+  -ms-border-radius: 0rem 0.375rem 0.625rem 0rem;
+  -o-border-radius: 0rem 0.375rem 0.625rem 0rem;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+
+.right-side {
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem 1.5rem 0rem;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem var(--shadow) inset;
+}
+
+/** Pantalla derecha */
+
+.right-screen {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  background-color: var(--screen-background);
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+  overflow: hidden;
+  transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+}
+
+.right-screen .first-screen-reflection {
+  top: 3.5rem;
+  left: -0.625rem;
+  width: 86%;
+}
+
+.right-screen .second-screen-reflection {
+  top: 4rem;
+  left: 5rem;
+  width: 84%;
+}
+
+.info-container {
+  padding: 0.25rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.info-container::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.info-container::-webkit-scrollbar-thumb {
+  background-color: var(--gray-border);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.info-titles {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.display-stats {
+  width: 100%;
+}
+
+.stat {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.5fr;
+  margin-bottom: 0.25rem;
+}
+
+.stats-progress-container {
+  width: 6.25rem;
+  height: 1rem;
+  border: 0.125rem solid var(--black-border);
+  background-color: var(--screen-background);
+}
+
+.stats-progress-bar {
+  height: 100%;
+  background-color: var(--small-circle-yellow);
+}
+
+.stats-value {
+  text-align: end;
+}
+
+.display-movements,
+.display-abilities,
+.display-types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+.display-movements span,
+.display-abilities span,
+.display-types span {
+  background-color: var(--screen-background);
+  padding: 0.25rem 0;
+}
+
+.steel {
+  background-color: var(--steel-color) !important;
+  color: var(--black-border) !important;
+}
+
+.water {
+  background-color: var(--water-color) !important;
+  color: var(--black-border) !important;
+}
+
+.bug {
+  background-color: var(--bug-color) !important;
+  color: var(--black-border) !important;
+}
+
+.dragon {
+  background-color: var(--dragon-color) !important;
+  color: var(--white-text) !important;
+}
+
+.electric {
+  background-color: var(--electric-color) !important;
+  color: var(--black-border) !important;
+}
+
+.ghost {
+  background-color: var(--ghost-color) !important;
+  color: var(--white-text) !important;
+}
+
+.fire {
+  background-color: var(--fire-color) !important;
+  color: var(--white-text) !important;
+}
+
+.fairy {
+  background-color: var(--fairy-color) !important;
+  color: var(--black-border) !important;
+}
+
+.ice {
+  background-color: var(--ice-color) !important;
+  color: var(--black-border) !important;
+}
+
+.fighting {
+  background-color: var(--fighting-color) !important;
+  color: var(--white-text) !important;
+}
+
+.normal {
+  background-color: var(--normal-color) !important;
+  color: var(--white-text) !important;
+}
+
+.grass {
+  background-color: var(--grass-color) !important;
+  color: var(--black-border) !important;
+}
+
+.psychic {
+  background-color: var(--psychic-color) !important;
+  color: var(--black-border) !important;
+}
+
+.rock {
+  background-color: var(--rock-color) !important;
+  color: var(--white-text) !important;
+}
+
+.dark {
+  background-color: var(--dark-color) !important;
+  color: var(--white-text) !important;
+}
+
+.ground {
+  background-color: var(--ground-color) !important;
+  color: var(--black-border) !important;
+}
+
+.poison {
+  background-color: var(--poison-color) !important;
+  color: var(--white-text) !important;
+}
+
+.flying {
+  background-color: var(--flying-color) !important;
+  color: var(--black-border) !important;
+}
+
+/** Botones azules */
+
+.blue-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.125rem;
+  padding: 0.1875rem;
+  width: 100%;
+  height: 4rem;
+  margin-top: 1rem;
+  background-color: var(--black-border);
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0.1875rem 0.1875rem var(--shadow);
+}
+
+.blue-button {
+  background-color: var(--blue-buttons);
+}
+
+.blue-button:first-of-type {
+  border-top-left-radius: 0.25rem;
+}
+
+.blue-button:last-of-type {
+  border-bottom-right-radius: 0.25rem;
+}
+
+.blue-button:nth-of-type(5) {
+  border-top-right-radius: 0.25rem;
+}
+
+.blue-button:nth-of-type(6) {
+  border-bottom-left-radius: 0.25rem;
+}
+
+.blue-top-left-brightness {
+  box-shadow: 0.1875rem 0.1875rem var(--brightness) inset;
+}
+
+.blue-top-brightness {
+  box-shadow: 0rem 0.1875rem var(--brightness) inset;
+}
+
+.blue-left-brightness {
+  box-shadow: 0.1875rem 0rem var(--brightness) inset;
+}
+
+/** Búsqueda de pokemones */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.search-pokemon {
+  outline: none;
+  background-color: var(--screen-background);
+  padding: 0.25rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+}
+
+.search-pokemon::placeholder {
+  color: inherit;
+}
+
+.search-button {
+  background-color: var(--screen-background);
+  padding: 0rem 0.75rem;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+/** Decoraciones inferiores */
+
+.right-deco-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.white-buttons-container {
+  display: flex;
+  width: 45%;
+  box-shadow: 0.1875rem 0.1875rem var(--shadow);
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+}
+
+.white-button {
+  width: 50%;
+  border: 0.1875rem solid var(--black-border);
+  background-color: var(--gray-border);
+}
+
+.white-button:first-of-type {
+  border-right: calc(0.1875rem / 2) solid var(--black-border);
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.white-button:last-of-type {
+  border-left: calc(0.1875rem / 2) solid var(--black-border);
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.small-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+}
+
+.black-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.small-black-button {
+  width: 40%;
+  height: 0.625rem;
+  background-color: var(--screen-background);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+  box-shadow: 0.125rem 0.125rem var(--shadow);
+}
+
+.yellow-circle-right {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--small-circle-yellow);
+  border: 0.125rem solid var(--black-border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.big-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 3rem;
+  margin-top: 1rem;
+}
+
+.big-black-button {
+  display: grid;
+  place-content: center;
+  width: 45%;
+  border: 0.1875rem solid var(--black-border);
+  border-radius: 0.375rem;
+  background-color: var(--screen-background);
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -ms-border-radius: 0.375rem;
+  -o-border-radius: 0.375rem;
+  box-shadow: 0.1875rem 0.1875rem var(--shadow);
+}
+
+/* TODO: Eliminar control de volumen en dispositivos móviles */

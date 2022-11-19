@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pokedex.css">
+  <link rel="icon" href="./assets/icons/pokeball.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <!--* Música de fondo -->
+  <audio id="audio" loop>
+    <source src="./assets/music/pokemonTheme.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <main class="main-container">
+    
+    <!--* Controles de música -->
+    <div class="music-controls-container">
+      <iconify-icon icon="carbon:play-filled-alt" width="3rem" class="music-icon" id="music-icon">
+      </iconify-icon>
+      <input type="range" name="music-vol" id="music-vol" class="music-vol" min="0" max="1" step="0.01" value="0.1">
+    </div>
+
+    <!--* Pokedex -->
+    <div class="pokedex">
+      
+      <!--* Pokedex lado izquierdo -->
+      <div class="pokedex-left-side-container">
+
+        <!--* Pokedex top -->
+        <div class="top">
+          <div class="top-brightness"></div>
+          <div class="top-left-brightness"></div>
+        
+          <!--* Círculo azul -->
+          <div class="big-circle-border">
+            <div class="big-circle-border-inside" id="big-circle-border-inside">
+              <div class="big-circle-fill" id="big-circle-fill"></div>
+            </div>
+          </div>
+        
+          <!--* Círculos de colores -->
+          <div class="small-circles-container">        
+            <div class="small-circle-border">
+              <div class="small-circle-fill red-circle"></div>
+            </div>        
+            <div class="small-circle-border">
+              <div class="small-circle-fill yellow-circle"></div>
+            </div>        
+            <div class="small-circle-border">
+              <div class="small-circle-fill green-circle"></div>
+            </div>        
+          </div>        
+        </div>
+        
+        <!--* Bisagra -->
+        <div class="hinge">
+          <div class="top-hinge"></div>
+          <div class="hinge-brightness"></div>
+          <div class="bottom-hinge"></div>
+        </div>
+
+        <!--* Pokedex contenedor de pantalla -->
+        <div class="pokedex-left-side-limits">
+          <div class="pokedex-top-shadow"></div>
+          <div class="pokedex-left-brightness"></div>
+          <div class="pokedex-left-side">
+
+            <!--* Borde de pantalla -->
+            <div class="screen-container">
+
+              <!--* Pantalla -->
+              <div class="screen" id="screen">
+                <div class="first-screen-reflection reflection"></div>
+                <div class="second-screen-reflection reflection"></div>
+                <div class="pokemon-img-container">
+                  <img src="./assets/img/pokeball.gif" alt="Pokemon image" class="pokemon-img" id="pokemon-img">
+                  <p class="loading-text" id="loading-text"></p>
+                </div>
+              </div>
+
+              <!--* Decoraciones de pantalla -->
+              <div class="circles-deco-container">
+                <div class="small-circles-deco"></div>
+                <div class="small-circles-deco"></div>
+              </div>
+              <div class="screen-bottom-deco-container">
+                <div class="big-circle-deco"></div>              
+                <div class="lines-deco-container">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+
+            <!--* Botones de pantalla -->
+            <div class="left-side-buttons-container">
+
+              <!--* Botón de encendido -->
+              <div class="left-circle-button" id="left-circle-button">
+                <iconify-icon icon="material-symbols:power-rounded" width="2rem" style="color: var(--power-off-button);" class="power-icon" id="power-icon"></iconify-icon>
+              </div>
+
+              <!--* Pantalla verde -->
+              <div class="middle-deco-container">
+                <div class="lights-container">
+                  <div class="light red-light"></div>
+                  <div class="light blue-light"></div>
+                </div>
+                <div class="green-screen"></div>
+              </div>
+
+              <!--* Controles -->
+              <div class="controllers">
+                <div class="up-controller controller-item"></div>
+                <div class="left-controller controller-item" id="left-controller"></div>
+                <div class="center-controller controller-item">
+                  <div class="center-controller-deco"></div>
+                </div>
+                <div class="right-controller controller-item" id="right-controller"></div>
+                <div class="down-controller controller-item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--* Pokedex lado derecho -->
+      <div class="pokedex-right-side">
+        <div class="right-side-container">
+
+          <!--* Parte frontal -->
+          <div class="pokedex-right-container-front">
+            <div class="right-side">
+
+              <!--* Pantalla derecha -->
+              <div class="right-screen">
+                <div class="first-screen-reflection reflection"></div>
+                <div class="second-screen-reflection reflection"></div>
+                <div class="info-container" id="info-container"></div>
+              </div>
+
+              <!--* Botones azules -->
+              <div class="blue-buttons-container">
+                <div class="blue-button blue-top-left-brightness"></div>
+                <div class="blue-button blue-top-brightness"></div>
+                <div class="blue-button blue-top-brightness"></div>
+                <div class="blue-button blue-top-brightness"></div>
+                <div class="blue-button blue-top-brightness"></div>
+                <div class="blue-button blue-left-brightness"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+              </div>
+
+              <!--* Búsqueda de pokemones -->
+              <form id="search-container" class="search-container">
+                <input type="text" name="search-pokemon" id="search-pokemon" class="search-pokemon" placeholder="Search Pokemon" disabled autocomplete="off">
+                <button class="search-button" type="submit">
+                  <iconify-icon icon="radix-icons:magnifying-glass" width="1.5rem" style="color: var(--gray-border);" class="search-icon"></iconify-icon>
+                </button>
+              </form>
+
+              <!--* Decoraciones inferiores -->
+              <div class="right-deco-container">
+                <div class="white-buttons-container">
+                  <div class="white-button"></div>
+                  <div class="white-button"></div>
+                </div>
+                <div class="small-buttons-container">
+                  <div class="black-buttons-container">
+                    <div class="small-black-button"></div>
+                    <div class="small-black-button"></div>
+                  </div>
+                  <div class="yellow-circle-right"></div>
+                </div>
+              </div>
+              <div class="big-buttons-container">
+                <div class="big-black-button" id="height-display"></div>
+                <div class="big-black-button" id="weight-display"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!--* Parte trasera -->
+          <div class="pokedex-right-container-back">
+            <div class="pokedex-left-brightness"></div>
+            <div class="yellow-triangle"></div>
+            <div class="bottom-line"></div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </main>
+  <script src="./pokedex.js"></script>
+</body>
+
+</html>
