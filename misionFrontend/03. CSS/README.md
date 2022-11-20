@@ -22,7 +22,17 @@ Bonus:
 
 ## Planeación de campaña de vacunación
 
-**Pendiente**
+**Nombre de campaña**
+
+Combate el virus con vacunas
+
+**Medios de difusión**
+
+Redes sociales, televisión y en persona
+
+**Métodos de difusión**
+
+Anuncios, comerciales, charlas y entrega de folletos
 
 ## Despliegue
 
