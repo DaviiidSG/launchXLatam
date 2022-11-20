@@ -77,6 +77,7 @@ function clearPokemonInfo() {
 
 function turnOffPokedex() {
   pokedexIsOn = false;
+  pokemonId = null;
   blueBrightnessOut.style.boxShadow = 'var(--circle-outside-shadow)';
   blueBrightnessIn.style.backgroundColor = 'var(--big-circle-inside-shadow)';
   powerIcon.setAttribute('style', 'color: var(--power-off-button)');
@@ -107,9 +108,18 @@ const searchContainer = document.getElementById('search-container'),
   weightDisplay = document.getElementById('weight-display'),
   heightDisplay = document.getElementById('height-display');
 
+function delSpaces(word) {
+  if (word.includes(' ')) {
+    return word.trim()
+      .split(' ')
+      .join('-');
+  }
+  return word;
+}
+
 function getInputPokemon() {
   if (pokeNameInput.value) {
-    const pokeName = pokeNameInput.value.toLowerCase();
+    const pokeName = delSpaces(pokeNameInput.value).toLowerCase();
     getPokemon(pokeName);
   }
 }
@@ -129,27 +139,14 @@ function loading() {
 }
 
 function capitalize(name) {
-  const firstLetter = name[0].toUpperCase();
-  const word = firstLetter + name.slice(1);
-  return word;
+  return name[0].toUpperCase() + name.slice(1);
 }
 
 function delHyphen(word) {
   if (word.includes('-')) {
-    word += ' ';
-    let position = 0;
-    const wordsArr = [];
-    while(true) {
-      const findPosition = word.indexOf('-', position);
-      wordsArr.push(word.slice(position, findPosition));
-      if (findPosition == -1) break;
-      position = findPosition + 1;
-    }
-    let finalWord = '';
-    wordsArr.forEach((item) => {
-      finalWord += `${capitalize(item)} `
-    })
-    return finalWord.trim();
+    return word.split('-')
+      .map((item) => capitalize(item))
+      .join(' ');
   }
   return capitalize(word);
 }
