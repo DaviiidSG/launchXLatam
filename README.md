@@ -16,8 +16,8 @@
 
 ### Práctica de JavaScript - Pokedex
 
-[Ver proyecto](./misionFrontend/04.%20JS/Pokedex/README.md)
+[Ver proyecto](./misionFrontend/04.%20JS/4.1%20Pokedex/README.md)
 
 ### Práctica de JavaScript - Calculadora
 
-[Ver proyecto](./misionFrontend/04.%20JS/Calculadora/README.md)
+[Ver proyecto](./misionFrontend/04.%20JS/4.2%20Calculadora/README.md)
