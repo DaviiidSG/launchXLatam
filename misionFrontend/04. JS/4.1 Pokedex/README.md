@@ -1,4 +1,4 @@
-# Práctica 4 - Pokedex
+# Práctica 4.1 - Pokedex
 
 Para esta práctica se nos pidió realizar una pokedex
 Las tecnologías empleadas fueron HTML, CSS y JavaScript.

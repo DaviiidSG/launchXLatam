@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icon/Calculator.ico" />
+    <link rel="stylesheet" href="./calculadora.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./calculadora.js" defer></script>
+    <title>Calculadora</title>
+  </head>
+
+  <body>
+    <div class="calculator-container">
+      <div class="calculator">
+        <div class="calculator-screen">
+          <div id="previous-value"></div>
+          <div id="current-value">0</div>
+        </div>
+        <div class="keyboard">
+          <div class="misc key" id="clear">C</div>
+          <div class="misc key" id="change-sign">&plusmn;</div>
+          <div class="misc key double" id="del">&larr;</div>
+          <div class="operator sign key" id="rem">&percnt;</div>
+          <div class="operator sign key" id="radic">&radic;</div>
+          <div class="operator sign key" id="pow">
+            x&#8319;
+          </div>
+          <div class="operator sign key" id="div">&divide;</div>
+          <div class="number num key">7</div>
+          <div class="number num key">8</div>
+          <div class="number num key">9</div>
+          <div class="operator sign key" id="mul">&times;</div>
+          <div class="number num key">4</div>
+          <div class="number num key">5</div>
+          <div class="number num key">6</div>
+          <div class="operator sign key" id="sub">&minus;</div>
+          <div class="number num key">1</div>
+          <div class="number num key">2</div>
+          <div class="number num key">3</div>
+          <div class="operator sign key" id="sum">&plus;</div>
+          <div class="number num key">0</div>
+          <div class="number num key">.</div>
+          <div class="operator key double equal-bg" id="equal">&equals;</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
